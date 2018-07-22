@@ -1143,7 +1143,7 @@ export default class ImageGallery extends React.Component {
             mainSrc={items[currentIndex].original}
             nextSrc={items[(currentIndex + 1) % items.length].original}
             prevSrc={items[(currentIndex + items.length - 1) % items.length].original}
-            onCloseRequest={() => this.setModalFullscreen(false)} // eslint-disable-line
+            onCloseRequest={this.exitFullScreen.bind(this)} // eslint-disable-line
             onMovePrevRequest={slideLeft}
             onMoveNextRequest={slideRight}
           />
