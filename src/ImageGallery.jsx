@@ -2,9 +2,13 @@ import React from 'react';
 import Swipeable from 'react-swipeable';
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
-import Lightbox from 'react-image-lightbox';
 import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
+let Lightbox;
+
+if (typeof window !== 'undefined') {
+  Lightbox = require('react-image-lightbox').default;
+}
 
 const screenChangeEvents = [
   'fullscreenchange',
@@ -1134,7 +1138,7 @@ export default class ImageGallery extends React.Component {
         aria-live='polite'
       >
 
-        {modalFullscreen && (
+        {modalFullscreen && typeof window !== 'undefined' && (
           <Lightbox
             mainSrc={items[currentIndex].original}
             nextSrc={items[(currentIndex + 1) % items.length].original}

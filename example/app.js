@@ -191,6 +191,7 @@ class App extends React.Component {
           ref={i => this._imageGallery = i}
           items={this.images}
           lazyLoad={false}
+          useBrowserFullscreen={false}
           onClick={this._onImageClick.bind(this)}
           onImageLoad={this._onImageLoad}
           onSlide={this._onSlide.bind(this)}
