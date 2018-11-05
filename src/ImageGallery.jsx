@@ -5,6 +5,7 @@ import debounce from 'lodash.debounce';
 import Lightbox from 'react-image-lightbox';
 import ResizeObserver from 'resize-observer-polyfill';
 import PropTypes from 'prop-types';
+import 'react-image-lightbox/style.css';
 
 const screenChangeEvents = [
   'fullscreenchange',
